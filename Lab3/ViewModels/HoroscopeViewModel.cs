@@ -1,10 +1,11 @@
-﻿using ButenkoLab03.Tools;
+using ButenkoLab03.Tools;
 using ButenkoLab03.Tools.Managers;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
 using ButenkoLab03.Model;
 using ButenkoLab03.Tools.Navigation;
+using System.Threading;
 
 namespace ButenkoLab03.ViewModels
 {
@@ -79,6 +80,7 @@ namespace ButenkoLab03.ViewModels
 			bool result = await Task.Run(() => {
 				try
 				{
+					Thread.Sleep(1000);
 					_user = new Person(_name, _surname, _dateOfBirth, _email);
 					if (_user.IsBirthDay)
 					{
